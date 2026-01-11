@@ -22,7 +22,7 @@
 
 body {
     font-family: 'DidactGothic', 'Didact Gothic', sans-serif;
-    background-color: #FFFBE8;
+    background-color: #FFFFFF;
     color: #990000;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -42,7 +42,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFFBE8;
+    background-color: #FFFFFF;
     animation: fadeIn 0.8s ease-in;
 }
 
@@ -193,7 +193,7 @@ picture {
     margin: 40px auto;
     text-align: left;
     padding: 30px;
-    background-color: #FFFBE8;
+    background-color: #FFFFFF;
     border-radius: 10px;
     animation: fadeInUp 0.8s ease-out;
 }
@@ -218,7 +218,7 @@ picture {
     font-family: 'DidactGothic', sans-serif;
     border: 2px solid #990000;
     border-radius: 5px;
-    background-color: #FFFBE8;
+    background-color: #FFFFFF;
     color: #990000;
     transition: border-color 0.3s;
 }
@@ -261,7 +261,7 @@ picture {
     font-size: 1.1rem;
     font-family: 'NauryzRedKeds', serif;
     background-color: #990000;
-    color: #FFFBE8;
+    color: #FFFFFF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
