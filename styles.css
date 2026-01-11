@@ -1,0 +1,467 @@
+@font-face {
+    font-family: 'NauryzRedKeds';
+    src: url('fonts/NauryzRedKeds.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DidactGothic';
+    src: url('fonts/DidactGothic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DidactGothic', 'Didact Gothic', sans-serif;
+    background-color: #FFFBE8;
+    color: #990000;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.hero {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFBE8;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+picture {
+    width: 100%;
+    display: block;
+}
+
+.content {
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-content {
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-info {
+    margin-bottom: 50px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.date-time {
+    font-family: 'NauryzRedKeds', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #990000;
+}
+
+.venue-link {
+    text-decoration: none;
+    color: #990000;
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.venue-link:hover {
+    opacity: 0.8;
+}
+
+.venue {
+    font-family: 'DidactGothic', sans-serif;
+    font-size: 1.8rem;
+    margin: 0 0 8px;
+    color: #990000;
+    font-weight: normal;
+}
+
+.address {
+    font-family: 'DidactGothic', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: #990000;
+}
+
+.intro {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #990000;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.section-title {
+    font-family: 'NauryzRedKeds', serif;
+    font-size: 1.8rem;
+    margin: 60px 0 25px;
+    color: #990000;
+    text-transform: uppercase;
+    animation: fadeIn 0.6s ease-in;
+}
+
+.ceremony-schedule {
+    margin-bottom: 40px;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.ceremony-schedule p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #990000;
+}
+
+.dresscode-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #990000;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.dresscode-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 40px auto;
+    object-fit: cover;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.gifts-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #990000;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.presence-question {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #990000;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.rsvp-form {
+    max-width: 500px;
+    margin: 40px auto;
+    text-align: left;
+    padding: 30px;
+    background-color: #FFFBE8;
+    border-radius: 10px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #990000;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: 'DidactGothic', sans-serif;
+    border: 2px solid #990000;
+    border-radius: 5px;
+    background-color: #FFFBE8;
+    color: #990000;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #cc0000;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #990000;
+}
+
+.radio-label span {
+    font-size: 1rem;
+    color: #990000;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-family: 'NauryzRedKeds', serif;
+    background-color: #990000;
+    color: #FFFBE8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(153, 0, 0, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(153, 0, 0, 0.2);
+}
+
+.contact-text {
+    font-size: 1rem;
+    margin-top: 60px;
+    text-align: center;
+    color: #990000;
+}
+
+.form-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.95rem;
+    display: none;
+}
+
+.form-message.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        padding: 45px 35px;
+        max-width: 900px;
+    }
+
+    .event-info {
+        margin-bottom: 55px;
+    }
+
+    .date-time {
+        font-size: 3.2rem;
+    }
+
+    .venue {
+        font-size: 1.9rem;
+    }
+
+    .address {
+        font-size: 1.15rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .intro,
+    .ceremony-schedule p,
+    .dresscode-text,
+    .gifts-text {
+        font-size: 1.05rem;
+    }
+
+    .hero {
+        padding: 0;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .dresscode-image {
+        max-width: 700px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .rsvp-form {
+        max-width: 550px;
+        padding: 35px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content {
+        padding: 50px 40px;
+    }
+
+    .event-info {
+        margin-bottom: 60px;
+    }
+
+    .date-time {
+        font-size: 3.5rem;
+    }
+
+    .venue {
+        font-size: 2rem;
+    }
+
+    .address {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .intro,
+    .ceremony-schedule p,
+    .dresscode-text,
+    .gifts-text {
+        font-size: 1.1rem;
+    }
+
+    .hero {
+        padding: 0;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: cover;
+    }
+
+    .dresscode-image {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content {
+        padding: 60px 50px;
+    }
+
+    .event-info {
+        margin-bottom: 70px;
+    }
+
+    .date-time {
+        font-size: 4rem;
+    }
+
+    .venue {
+        font-size: 2.2rem;
+    }
+
+    .address {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        padding: 0;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: cover;
+    }
+
+    .dresscode-image {
+        max-width: 700px;
+    }
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .rsvp-form {
+        display: none;
+    }
+}
+

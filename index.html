@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <picture>
+                <source media="(min-width: 768px)" srcset="img/main_pc.PNG">
+                <img src="img/main.PNG" alt="Главное изображение" class="hero-image">
+            </picture>
+        </section>
+
+        <section class="content">
+            <div class="text-content">
+                <div class="event-info">
+                    <h1 class="date-time">11.02.2026 в 13.00</h1>
+                    <a href="https://yandex.ru/maps/-/CLdJz40B" target="_blank" class="venue-link">
+                        <h2 class="venue">Дворец бракосочетания № 1</h2>
+                        <p class="address">Английская наб., 28, Санкт-Петербург</p>
+                    </a>
+                </div>
+
+                <p class="intro">
+                    Один день в этом году станет для нас особенно важным, и мы хотим провести его в кругу близких и друзей! Мы приглашаем вас на торжественную церемонию бракосочетания, которая продлится около часа. После поздравлений и фотосессии наше празднование в этот день завершится.
+                </p>
+
+                <p class="intro">
+                    Это осознанный выбор в пользу камерного и сокровенного формата. Мы будем рады видеть вас именно на этой самой важной для нас части дня!
+                </p>
+
+                <h2 class="section-title">ЦЕРЕМОНИЯ</h2>
+                <div class="ceremony-schedule">
+                    <p><strong>12:50 – 13:20</strong> Сбор гостей, фотографии</p>
+                    <p><strong>13:20 – 13:40</strong> Торжественная церемония бракосочетания</p>
+                    <p><strong>13:40 – 14:00</strong> Поздравления, фотографии</p>
+                </div>
+
+                <h2 class="section-title">ДРЕСС-КОД</h2>
+                <p class="dresscode-text">
+                    Мы будем рады, если вы поддержите элегантную атмосферу нашего дня. Для гармоничных фотографий просим вас выбрать наряды в официальном / old money стиле неярких, приглушенных цветов.
+                </p>
+                <p class="dresscode-text">
+                    Например: костюмы, платья-футляры, платья с классическим кроем, классика.
+                </p>
+
+                <img src="img/dresscode.png" alt="Дресс-код" class="dresscode-image">
+
+                <h2 class="section-title">ПОДАРКИ</h2>
+                <p class="gifts-text">
+                    Ваше присутствие — главный подарок для нас!
+                </p>
+                <p class="gifts-text">
+                    Если вы все же хотите нас порадовать, будем признательны за некрупные и нетяжелые подарки (конверт, открытка и т.п.). Спасибо за вашу чуткость!
+                </p>
+
+                <h2 class="section-title">ПРИСУТСВИЕ</h2>
+                <p class="presence-question">Будете ли вы на торжестве?</p>
+
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ответ *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="attendance" value="Да, обязательно" required>
+                                <span>Да, обязательно</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="attendance" value="Нет, не смогу" required>
+                                <span>Нет, не смогу</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Сообщение (необязательно)</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Отправить</button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+
+                <p class="contact-text">
+                    Если у вас возникли вопросы, не стесняетесь писать и спрашивать! Всех ждем!
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init('mKsAT_WHm_AVRW30P');
+
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = form.querySelector('.submit-btn');
+            const messageDiv = document.getElementById('form-message');
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                attendance: document.querySelector('input[name="attendance"]:checked').value,
+                message: document.getElementById('message').value || 'Нет сообщения',
+                to_email: 'ragozina2003@gmail.com',
+                subject: 'гости на свадьбу'
+            };
+
+            const emailBody = `
+Имя: ${formData.name}
+Ответ: ${formData.attendance}
+Сообщение: ${formData.message}
+            `.trim();
+
+            emailjs.send('service_xlpqcr7', 'template_f7cp4hr', {
+                to_email: formData.to_email,
+                subject: formData.subject,
+                message: emailBody,
+                name: formData.name,
+                attendance: formData.attendance
+            })
+            .then(function() {
+                messageDiv.textContent = 'Спасибо за ваш ответ!';
+                messageDiv.className = 'form-message success';
+                form.reset();
+                submitBtn.disabled = false;
+            }, function(error) {
+                messageDiv.textContent = 'Произошла ошибка. Пожалуйста, попробуйте еще раз или свяжитесь с нами напрямую.';
+                messageDiv.className = 'form-message error';
+                submitBtn.disabled = false;
+                console.error('EmailJS error:', error);
+            });
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+            messageDiv.textContent = '';
+            messageDiv.className = 'form-message';
+        });
+    </script>
+</body>
+</html>
+
